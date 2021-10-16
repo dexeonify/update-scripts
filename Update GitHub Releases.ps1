@@ -219,12 +219,8 @@ foreach ($repo in $repos) {
             Update-Release -arg "croc --version" -tagtype $customtag `
                            -format "croc_$customtag`_Windows-64bit.zip" -filter "croc.exe"
         }
-        "gifski" {
-            Update-Gifski
-        }
-        "FFmpeg-Builds" {
-            Update-FFmpeg
-        }
+        "gifski" { Update-Gifski }
+        "FFmpeg-Builds" { Update-FFmpeg }
     }
 }
 
