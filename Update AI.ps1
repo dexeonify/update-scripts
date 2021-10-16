@@ -24,7 +24,7 @@ function Test-IsLatest {
 function Get-LatestRelease {
     <#
     .SYNOPSIS
-        Downloads the latest release based on the naming format.
+        Downloads the latest release given the naming format.
     #>
     param ($format)
 

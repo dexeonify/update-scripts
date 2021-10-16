@@ -11,7 +11,7 @@ function Set-CustomTag {
 
         But, some GitHub repos uses a different tag (but still derived from the original tag)
         for their release files.
-        Eg: The tag is 'v9.4.2', but the release format is 'release-9.4.2.zip'
+        Eg: The tag is 'v9.4.2', but the release format is 'release-9.4.2.zip'.
     #>
     param ($replace)
 
@@ -33,8 +33,8 @@ function Test-NeedUpdate {
     .PARAMETER tagtype
         Determine whether to compare to the original tag or custom tag.
         Some GitHub repos uses a different tag, which might not match the program's output.
-        Eg: aria2c --version prints "version 1.36.0"
-            while the GitHub repo uses "release-1.36.0" as its tag
+        Eg: aria2c --version prints "version 1.36.0",
+            while the GitHub repo uses "release-1.36.0" as its tag.
     #>
     param ($arg, $tagtype)
 
@@ -109,9 +109,9 @@ function Update-Gifski {
 
     .DESCRIPTION
         Gifski uses a different archive method: tar.xz. Due to this, we would
-        have to use a different code path to download Gifski.
+        have to use a different method to extract Gifski with 7-zip.
     #>
-    $needupdate = Test-NeedUpdate -arg "gifski --version" -tagtype "$tag"
+    $needupdate = Test-NeedUpdate -arg "gifski --version" -tagtype $tag
 
     if ($needupdate) {
         Get-LatestRelease -format "gifski-$tag.tar.xz"
@@ -130,8 +130,8 @@ function Update-FFmpeg {
 
     .DESCRIPTION
         We've have switched from Gyan's FFmpeg to BtbN's, so we can have both git
-        and shared builds. Unfortunately, BtbN's release tag isn't very helpful,
-        it can't be used to compare versions, nor can it be used to find the download
+        and shared builds. Unfortunately, BtbN's release tag isn't very helpful, as
+        it can't be used to compare versions, nor can it be used to form the download
         URL. Therefore, we have to use a different code path for both version checking
         and downloading latest release.
     #>
@@ -140,7 +140,7 @@ function Update-FFmpeg {
     $download = ($urls | Select-String "win64-gpl-shared.zip" -NoEmphasis)
     $archive = (Split-Path $download -Leaf)
 
-    # Get the version from the URL
+    # Extract the version from the download URL using regex
     $download -match "ffmpeg-(N.+?(?=-win64))" | Out-Null
     Set-Variable -Name "customtag" -Value $Matches[1] -Scope global
     $needupdate = Test-NeedUpdate -arg "ffmpeg -version" -tagtype $customtag
@@ -219,7 +219,7 @@ foreach ($repo in $repos) {
             Update-Release -arg "croc --version" -tagtype $customtag `
                            -format "croc_$customtag`_Windows-64bit.zip" -filter "croc.exe"
         }
-        "gifski" { Update-Gifski }
+        "gifski"        { Update-Gifski }
         "FFmpeg-Builds" { Update-FFmpeg }
     }
 }
