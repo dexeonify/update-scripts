@@ -79,7 +79,7 @@ $object = New-Object -TypeName psobject
 # Create urls.txt to append URLs for batch downloads
 New-Item urls.txt -Force | Out-Null
 
-$programs = "avifenc.exe", "avifdec.exe", "cjxl.exe", "cwebp.exe", "vpxenc.exe", "rav1e.exe", "SvtAv1EncApp.exe", "mediainfo.exe", "opusenc.exe"
+$programs = "avifenc.exe", "cjxl.exe", "cwebp.exe", "vpxenc.exe", "rav1e.exe", "SvtAv1EncApp.exe", "mediainfo.exe", "opusenc.exe"
 $autoremove = Read-KeyOrTimeout "Do you want to automatically remove downloaded files? [Y/n] (default=Y)" "Y"
 Write-Host ""
 
