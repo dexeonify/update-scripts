@@ -196,7 +196,7 @@ function Read-KeyOrTimeout ($prompt, $key) {
 }
 
 
-$repos = "aria2/aria2", "schollz/croc", "ImageOptim/gifski", "BtbN/FFmpeg-Builds"
+$repos = "aria2/aria2", "schollz/croc", "ImageOptim/gifski", "BtbN/FFmpeg-Builds", "kornelski/cavif-rs"
 $autoremove = Read-KeyOrTimeout "Do you want to automatically remove downloaded packages? [Y/n] (default=Y)" "Y"
 Write-Host ""
 
@@ -221,6 +221,11 @@ foreach ($repo in $repos) {
         }
         "gifski"        { Update-Gifski }
         "FFmpeg-Builds" { Update-FFmpeg }
+        "cavif-rs" {
+            Set-CustomTag @("^v(.*)-win$", "$1")
+            Update-Release -arg "cavif --version" -tagtype $customtag `
+                           -format "cavif-$customtag.zip"  -filter "win\cavif.exe"
+        }
     }
 }
 

@@ -12,6 +12,7 @@ Some personal Powershell scripts to update specific AI tools, CLI tools from Git
 - [schollz/croc](https://github.com/schollz/croc)
 - [ImageOptim/gifski](https://github.com/ImageOptim/gifski)
 - [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
+- [kornelski/cavif-rs](https://github.com/kornelski/cavif-rs/)
 
 ### Windows Builds
 - avifenc.exe
