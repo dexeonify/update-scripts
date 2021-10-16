@@ -71,7 +71,7 @@ function Read-KeyOrTimeout ($prompt, $key) {
 
 
 # Parses manifest.json for version checking
-Invoke-WebRequest https://jeremylee.sh/bins/manifest.json -OutFile manifest.json
+Invoke-WebRequest "https://jeremylee.sh/bins/manifest.json" -OutFile manifest.json
 
 # Create a custom object to convert to version.json
 $object = New-Object -TypeName psobject
@@ -92,7 +92,7 @@ foreach ($program in $programs) {
     # Adds URLs of releases into urls.txt, if newer version is available
     if ( !(Test-IfLatest) ) {
         Write-Host "New version found for $filename!" -ForegroundColor Cyan
-        Add-Content urls.txt https://jeremylee.sh/bins/$archive
+        Add-Content urls.txt "https://jeremylee.sh/bins/$archive"
     }
 
     # Record date time of last downloaded release, and append to $object
