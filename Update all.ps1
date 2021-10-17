@@ -1,4 +1,4 @@
-﻿Push-Location "D:\Misc\Scripts"
+﻿Push-Location "D:\Misc\Scripts\Update-Scripts"
 
 $scripts = ".\Update GitHub Releases.ps1", ".\Update Lastrosade Builds.ps1", ".\Update AI.ps1"
 
