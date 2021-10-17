@@ -1,5 +1,5 @@
 # update-scripts
-Some personal Powershell scripts to update specific AI tools, CLI tools from GitHub and Windows builds from https://jeremylee.sh/bins.
+Some personal Powershell scripts to update specific AI tools, CLI programs from GitHub and Windows builds from https://jeremylee.sh/bins.
 
 ### AI Tools
 - [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan)
@@ -25,3 +25,6 @@ Some personal Powershell scripts to update specific AI tools, CLI tools from Git
 - SvtAv1EncApp.exe
 - mediainfo.exe
 - opusenc.exe
+
+### Others
+A bash script to cross compile `aomenc.exe` with several compiler optimizations (such as **march=skylake + O3 + LTO**) is included.
