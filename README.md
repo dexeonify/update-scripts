@@ -27,4 +27,4 @@ Some personal Powershell scripts to update specific AI tools, CLI programs from 
 - opusenc.exe
 
 ### Others
-A bash script to cross compile `aomenc.exe` with several compiler optimizations (such as **march=skylake + O3 + LTO**) is included.
+- `Compile aomenc.sh`: Cross compile `aomenc.exe` with several compiler optimizations (such as **march=skylake + O3 + LTO**).
