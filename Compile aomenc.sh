@@ -1,7 +1,7 @@
 #! /bin/bash
 # A script to automatically cross compile aomenc for Windows
 # with compiler optimizations such as march=skylake, O3 and LTO!
-# Tested in WSL Ubuntu.
+# Tested on WSL Ubuntu.
 #
 # If you wish to learn more what each option does:
 # https://www.reddit.com/r/AV1/comments/jmwepw/how_to_build_libaomav1_to_be_as_fast_as_possible/

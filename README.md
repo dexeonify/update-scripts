@@ -1,5 +1,6 @@
 # update-scripts
-Some personal Powershell scripts to update specific AI tools, CLI programs from GitHub and Windows builds from https://jeremylee.sh/bins.
+Some personal Powershell scripts to update AI tools, CLI programs from GitHub and Windows builds from https://jeremylee.sh/bins. 
+Also includes some scripts to compile programs.
 
 ### AI Tools
 - [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan)
@@ -27,4 +28,6 @@ Some personal Powershell scripts to update specific AI tools, CLI programs from 
 - opusenc.exe
 
 ### Others
-- `Compile aomenc.sh`: Cross compile `aomenc.exe` with several compiler optimizations (such as **march=skylake + O3 + LTO**).
+- `Compile aomenc.sh`: Cross compile [aomenc](https://aomedia.googlesource.com/aom/) with several compiler optimizations (such as **march=skylake + O3 + LTO**).
+- [Compile av1an.md](Compile%20av1an.md): An (unofficial) guide to compile [Av1an](https://github.com/master-of-zen/Av1an) on Windows.
+- `Compile av1an.sh`: Drag and drop script to compile Av1an.
