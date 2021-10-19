@@ -35,7 +35,7 @@ Instead, we will use [MSYS2](https://www.msys2.org/) for a less painful experien
 
 5. Open **MSYS2 MinGW 64-bit**, `cd Av1an/`
 
-   **[Optional]** You can optimize the binary to make it smaller, [see below](####-Reduce-binary-size).
+   **[Optional]** You can optimize the binary to make it smaller, [see below](#Reduce-binary-size).
 
     1. Run `cargo build --release --no-default-features`
 
