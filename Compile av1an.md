@@ -15,7 +15,10 @@ Instead, we will use [MSYS2](https://www.msys2.org/) for a less painful experien
    2. In the dialog, input the following:
       > Variable name: `VAPOURSYNTH_LIB_DIR`
       >
-      > Variable value: `%LocalAppData%\Programs\VapourSynth\sdk\lib64` (based on your VS installation path)
+      > Variable value: `C:\Users\<user>\AppData\Local\Programs\VapourSynth\sdk\lib64`
+
+      **Note:** Change according to your VS installation path, also replace \<user\> with your username.
+                Absolute path seems to be more reliable. 🤔
 
    3. If you want to use `ffms2` or `lsmash` (recommended):
       - Download `ffms2` from [FFMS/ffms2](https://github.com/FFMS/ffms2/releases)
