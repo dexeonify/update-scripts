@@ -114,7 +114,7 @@ if ( Test-Path *.7z ) {
 }
 
 # Remove unused files
-$unusedfiles = "manifest.json", "urls.txt", "dwebp.exe", "webpinfo.exe", "webpmux.exe", "jxlinfo.exe",
+$unusedfiles = "manifest.json", "urls.txt", "dwebp.exe", "img2webp.exe", "webpinfo.exe", "webpmux.exe", "jxlinfo.exe",
                "benchmark_xl.exe", "SvtAv1DecApp.exe", "vpxdec.exe", "opusdec.exe", "opusinfo.exe"
 
 Remove-Item $unusedfiles -ErrorAction SilentlyContinue
