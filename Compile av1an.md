@@ -51,7 +51,7 @@ less painful experience. ;)
 
    **[Optional]** You can optimize the binary to make it smaller, [see below](#Reduce-binary-size).
 
-   1. Run `cargo build --release --no-default-features`
+   1. Run `cargo build --release`
    2. Wait for compilation and `av1an.exe` should be in `target/release/`
 
 6. Download [shared ffmpeg build from Gyan](https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-4.3.2-full_build-shared.7z)
@@ -61,12 +61,18 @@ less painful experience. ;)
    (It needs `avfilter-7.dll`, and does not support `avfilter-8.dll`),
    so [BtBN's builds](https://github.com/BtbN/FFmpeg-Builds) can't be used :(
 
----
+## Error Message
+
+> The code execution cannot proceed because avfilter-7.dll was not found.
+> Reinstalling the program may fix this problem.
+
+**Note:**
+If you are using Powershell, the error message is silenced. But you will know
+Av1an isn't working because it's not output anything. Use `cmd` to be sure.
 
 Av1an might have compiled, but when you try to run it,
 it will complain about missing dlls.
 
-That's because we specified `--no-default-features` when we called `cargo`.
 Since [this commit](https://github.com/master-of-zen/Av1an/commit/f52c82f15cfc17a5018174e1e0c8de95a49884b5),
 Av1an uses `ffmpeg-next` crate so it can include a statically linked `ffmpeg`.
 Unfortunately, the crate doesn't work on Windows because it tries to
@@ -74,8 +80,6 @@ use `pkg-config` and other tools which are only available on Linux.
 
 So... we have to provide Av1an with a dynamically linked
 (also known as "shared") `ffmpeg`.
-
----
 
 **Note**:
 As of writing this guide, one of the developers have figured out how to build
