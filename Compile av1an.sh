@@ -5,9 +5,13 @@ cd /d/Av1an
 git pull
 
 pacman -Syu
-cargo build --release --no-default-features
-strip target/release/av1an.exe
 
+CARGO_PROFILE_RELEASE_LTO=fat \
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+RUSTFLAGS="-C target-cpu=native" \
+cargo build --release
+
+strip target/release/av1an.exe
 cp target/release/av1an.exe /d/Programs/
 
-rm -rf target/
+cargo clean

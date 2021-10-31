@@ -68,7 +68,7 @@ less painful experience. ;)
 
 **Note:**
 If you are using Powershell, the error message is silenced. But you will know
-Av1an isn't working because it's not output anything. Use `cmd` to be sure.
+Av1an isn't working because it doesn't output anything. Use `cmd` to be sure.
 
 Av1an might have compiled, but when you try to run it,
 it will complain about missing dlls.
@@ -80,10 +80,6 @@ use `pkg-config` and other tools which are only available on Linux.
 
 So... we have to provide Av1an with a dynamically linked
 (also known as "shared") `ffmpeg`.
-
-**Note**:
-As of writing this guide, one of the developers have figured out how to build
-Av1an with a statically linked `ffmpeg` on Windows, but it's quite difficult.
 
 ## Reduce binary size
 
