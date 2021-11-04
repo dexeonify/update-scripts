@@ -43,3 +43,4 @@ Also includes some scripts to compile programs.
   [Av1an](https://github.com/master-of-zen/Av1an) on Windows.
 
 - `Compile av1an.sh`: Drag and drop script to compile Av1an.
+- `Sort Binaries.ps1`: Sort downloaded binaries into their respective folders.

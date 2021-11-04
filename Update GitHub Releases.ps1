@@ -151,7 +151,6 @@ function Update-FFmpeg {
         Write-Host "$reponame Updated`n" -ForegroundColor Green
         Expand-Release -file $archive -filter @("*\bin\*.exe", "*\bin\*.dll")
         Remove-Release -file $archive
-        Invoke-Item .
     }
     else {
         Write-Host "You are already using the latest version.`n" -ForegroundColor Green
