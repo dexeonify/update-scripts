@@ -221,7 +221,7 @@ foreach ($repo in $repos) {
         "gifski"        { Update-Gifski }
         "FFmpeg-Builds" { Update-FFmpeg }
         "cavif-rs" {
-            Set-CustomTag @("^v(.*)-win$", "$1")
+            Set-CustomTag "^v"
             Update-Release -arg "cavif --version" -tagtype $customtag `
                            -format "cavif-$customtag.zip"  -filter "win\cavif.exe"
         }
