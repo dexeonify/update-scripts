@@ -8,9 +8,6 @@
 #
 # === Prerequisites === #
 # sudo apt install cmake make nasm gcc-mingw-w64 g++-mingw-w64
-#
-# === Optional === #
-# croc (https://github.com/schollz/croc) - To easily send files across OS
 
 export CFLAGS="-flto -O3 -march=skylake" CXXFLAGS="-flto -O3 -march=skylake" LDFLAGS="-flto -O3 -march=skylake"
 
@@ -32,6 +29,6 @@ cmake -B build-mingw-w64 \
 
 make -C build-mingw-w64 -j$(nproc)
 
-croc send --code new-aomenc build-mingw-w64/aomenc.exe
+cp build-mingw-w64/aomenc.exe /mnt/d/Programs/Video/
 
 rm -rf ../aom
