@@ -1,15 +1,8 @@
 # update-scripts
 
-Some personal Powershell scripts to update AI tools, CLI programs from GitHub
+Some personal Powershell scripts to update CLI programs from GitHub
 and Windows builds from <https://jeremylee.sh/bins>.
 Also includes some scripts to compile programs.
-
-## AI Tools
-
-- [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan)
-- [nihui/rife-ncnn-vulkan](https://github.com/nihui/rife-ncnn-vulkan)
-- [nihui/realsr-ncnn-vulkan](https://github.com/nihui/realsr-ncnn-vulkan)
-- [k4yt3x/video2x](https://github.com/k4yt3x/video2x)
 
 ## GitHub Releases
 
