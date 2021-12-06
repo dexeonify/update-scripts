@@ -20,7 +20,6 @@ from <https://jeremylee.sh/bins>, also includes some scripts to compile programs
 - [rav1e](https://github.com/xiph/rav1e)
 - [SvtAv1EncApp](https://gitlab.com/AOMediaCodec/SVT-AV1)
 - [MediaInfo](https://mediaarea.net/en/MediaInfo)
-- [opusenc](https://opus-codec.org/)
 
 ## Others
 
