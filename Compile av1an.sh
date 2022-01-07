@@ -6,12 +6,10 @@ git pull
 
 pacman -Syu
 
-CARGO_PROFILE_RELEASE_LTO=fat \
-CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
 RUSTFLAGS="-C target-cpu=native" \
 cargo build --release
 
 strip target/release/av1an.exe
-cp target/release/av1an.exe /d/Programs/
+cp target/release/av1an.exe /d/Programs/av1an/
 
 cargo clean
