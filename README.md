@@ -23,7 +23,7 @@ from <https://jeremylee.sh/bins>, also includes some scripts to compile programs
 
 ## Others
 
-- [Compile aomenc.sh](Compile%20aomenc.sh):
+- [compile_aomenc.sh](compile_aomenc.sh):
   Cross compile [aomenc](https://aomedia.googlesource.com/aom/) with
   several compiler optimizations (such as **march=skylake + O3 + LTO**).
 
@@ -31,8 +31,8 @@ from <https://jeremylee.sh/bins>, also includes some scripts to compile programs
   An (unofficial) guide to compile [Av1an](https://github.com/master-of-zen/Av1an)
   on Windows.
 
-- [Compile av1an.sh](Compile%20av1an.sh):
+- [compile_av1an.sh](compile_av1an.sh):
   Drag and drop script to compile Av1an.
 
-- [Sort Binaries.ps1](Sort%20Binaries.ps1):
+- [Sort-Binaries.ps1](Sort-Binaries.ps1):
   Sort downloaded binaries into their respective folders.
