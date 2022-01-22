@@ -1,6 +1,6 @@
 ﻿Push-Location "D:\Misc\Scripts\Update-Scripts"
 
-$scripts = ".\Update GitHub Releases.ps1", ".\Update Lastrosade Builds.ps1", ".\Sort Binaries.ps1"
+$scripts = ".\Update-GitHubReleases.ps1", ".\Update-LastrosadeBuilds.ps1", ".\Sort-Binaries.ps1"
 
 foreach ($script in $scripts) {
     $name = $script -replace "\.\\"
