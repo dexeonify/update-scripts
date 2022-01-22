@@ -11,6 +11,6 @@ RUSTFLAGS="-C target-cpu=native" \
 cargo build --release
 
 strip target/release/av1an.exe
-cp target/release/av1an.exe /d/Programs/av1an/
+cp target/release/av1an.exe /d/Programs/Video/av1an/
 
 cargo clean
