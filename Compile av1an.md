@@ -3,7 +3,7 @@
 **Disclaimer:**
 I'm not the developer of the project, nor is this the "official" guide.
 I'm just documenting the process when I was trying to compile it as well.
-The reason I created this guide is because there *were* no public guides on
+The reason I created this guide is because there _were_ no public guides on
 how to compile Av1an on Windows.
 
 For the sake of simplicity, we will _not_ be using `rustup`. Therefore, Visual
@@ -55,7 +55,7 @@ C++ Build tools _does not_ need to be installed. Instead, we will use
    1. Run `cargo build --release`.
 
       **Note:** You can append `RUSTFLAGS="-C target-cpu=native"` before the
-      `cargo` command for a *slight* performance boost.
+      `cargo` command for a _slight_ performance boost.
 
    2. Wait for compilation and `av1an.exe` should be in `target/release/`!
 

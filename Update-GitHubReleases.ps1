@@ -223,7 +223,7 @@ foreach ($repo in $repos) {
         "cavif-rs" {
             Set-CustomTag "^v"
             Update-Release -arg "cavif --version" -tagtype $customtag `
-                           -format "cavif-$customtag.zip"  -filter "win\cavif.exe"
+                           -format "cavif-$customtag.zip" -filter "win\cavif.exe"
         }
     }
 }
