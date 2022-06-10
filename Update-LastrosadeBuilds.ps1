@@ -79,7 +79,7 @@ $object = New-Object -TypeName psobject
 # Create urls.txt to append URLs for batch downloads
 New-Item urls.txt -Force | Out-Null
 
-$programs = "avifenc.exe", "cjxl.exe", "cwebp.exe", "vpxenc.exe", "rav1e.exe", "SvtAv1EncApp.exe", "mediainfo.exe"
+$programs = "avifenc.exe", "cwebp.exe", "vpxenc.exe", "rav1e.exe", "SvtAv1EncApp.exe", "mediainfo.exe"
 $autoremove = Read-KeyOrTimeout "Do you want to automatically remove downloaded files? [Y/n] (default=Y)" "Y"
 Write-Host ""
 
@@ -114,8 +114,8 @@ if ( Test-Path *.7z ) {
 }
 
 # Remove unused files
-$unusedfiles = "manifest.json", "urls.txt", "dwebp.exe", "img2webp.exe", "webpinfo.exe", "webpmux.exe", "jxlinfo.exe",
-               "benchmark_xl.exe", "SvtAv1DecApp.exe", "vpxdec.exe"
+$unusedfiles = "manifest.json", "urls.txt", "dwebp.exe", "img2webp.exe",
+               "webpinfo.exe", "webpmux.exe", "SvtAv1DecApp.exe", "vpxdec.exe"
 
 Remove-Item $unusedfiles -ErrorAction SilentlyContinue
 
