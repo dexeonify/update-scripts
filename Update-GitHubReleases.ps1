@@ -129,32 +129,21 @@ function Update-FFmpeg {
         A specialised function to update FFmpeg.
 
     .DESCRIPTION
-        We've have switched from Gyan's FFmpeg to BtbN's, so we can have both git
-        and shared builds. Unfortunately, BtbN's release tag isn't very helpful, as
-        it can't be used to compare versions, nor can it be used to form the download
-        URL. Therefore, we have to use a different code path for both version checking
-        and downloading latest release.
+        BtbN uses the "latest" tag to indicate the latest version of FFmpeg,
+        whereas previous releases contain git commit hashes in the URL.
+        For the sake of simplicity, we will not be checking the version,
+        so just downloads whatever is the latest.
     #>
     # Get the download URL and archive name
     $urls = (Invoke-WebRequest $releases | ConvertFrom-Json)[0].assets.browser_download_url
     $download = ($urls | Select-String "win64-gpl-shared.zip" -NoEmphasis)
     $archive = (Split-Path $download -Leaf)
 
-    # Extract the version from the download URL using regex
-    $download -match "ffmpeg-(N.+?(?=-win64))" | Out-Null
-    Set-Variable -Name "customtag" -Value $Matches[1] -Scope global
-    $needupdate = Test-NeedUpdate -arg "ffmpeg -version" -tagtype $customtag
-
-    if ($needupdate) {
-        Write-Host "Dowloading latest release of ffmpeg..." -ForegroundColor Green
-        aria2c --console-log-level warn $download
-        Write-Host "$reponame Updated`n" -ForegroundColor Green
-        Expand-Release -file $archive -filter @("*\bin\*.exe", "*\bin\*.dll")
-        Remove-Release -file $archive
-    }
-    else {
-        Write-Host "You are already using the latest version.`n" -ForegroundColor Green
-    }
+    Write-Host "Dowloading latest release of ffmpeg..." -ForegroundColor Green
+    aria2c --console-log-level warn $download
+    Write-Host "$reponame Updated`n" -ForegroundColor Green
+    Expand-Release -file $archive -filter @("*\bin\*.exe", "*\bin\*.dll")
+    Remove-Release -file $archive
 }
 
 function Read-KeyOrTimeout ($prompt, $key) {
