@@ -11,9 +11,9 @@
 
 export CFLAGS="-flto -O3 -march=skylake" CXXFLAGS="-flto -O3 -march=skylake" LDFLAGS="-flto -O3 -march=skylake"
 
-git clone https://aomedia.googlesource.com/aom
+git clone -b full_build-alpha-4 https://github.com/BlueSwordM/aom-av1-psy
 
-cd aom
+cd aom-av1-psy
 
 cmake -B build-mingw-w64 \
 -DCMAKE_BUILD_TYPE=Release \
@@ -25,10 +25,10 @@ cmake -B build-mingw-w64 \
 -DCMAKE_EXE_LINKER_FLAGS="-flto -static" \
 -DCMAKE_CXX_FLAGS="-flto -O3 -march=skylake" \
 -DCMAKE_C_FLAGS="-flto -O3 -march=skylake" \
--DCMAKE_TOOLCHAIN_FILE=~/aom/build/cmake/toolchains/x86_64-mingw-gcc.cmake
+-DCMAKE_TOOLCHAIN_FILE=~/aom-av1-psy/build/cmake/toolchains/x86_64-mingw-gcc.cmake
 
 make -C build-mingw-w64 -j$(nproc)
 
 cp build-mingw-w64/aomenc.exe /mnt/d/Programs/Video/
 
-rm -rf ../aom
+rm -rf ../aom-av1-psy
