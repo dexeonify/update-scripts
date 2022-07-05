@@ -52,7 +52,7 @@ function Get-LatestRelease {
     $script:archive = $format
     Write-Host "Dowloading latest release of $reponame..." -ForegroundColor Green
     $download = "https://github.com/$repo/releases/download/$tag/$format"
-    aria2c --console-log-level warn --allow-overwrite true $download
+    aria2c --console-log-level=warn --allow-overwrite=true $download
 }
 
 function Expand-Release {
