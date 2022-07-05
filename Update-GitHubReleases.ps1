@@ -207,16 +207,14 @@ foreach ($repo in $repos) {
             Update-Release -arg "croc --version" -tagtype $customtag `
                            -format "croc_$customtag`_Windows-64bit.zip" -filter "croc.exe"
         }
-        "gifski"        { Update-Gifski }
-        "FFmpeg-Builds" { Update-FFmpeg }
         "cavif-rs" {
             Set-CustomTag "^v"
             Update-Release -arg "cavif --version" -tagtype $customtag `
                            -format "cavif-$customtag.zip" -filter "win\cavif.exe"
         }
-        "av1an" {
-            Get-LatestRelease -format "av1an.exe"
-        }
+        "gifski"        { Update-Gifski }
+        "FFmpeg-Builds" { Update-FFmpeg }
+        "av1an" { Get-LatestRelease -format "av1an.exe" }
     }
 }
 
