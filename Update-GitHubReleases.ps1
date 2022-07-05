@@ -52,7 +52,7 @@ function Get-LatestRelease {
     $script:archive = $format
     Write-Host "Dowloading latest release of $reponame..." -ForegroundColor Green
     $download = "https://github.com/$repo/releases/download/$tag/$format"
-    aria2c --console-log-level warn $download
+    aria2c --console-log-level warn --allow-overwrite true $download
 }
 
 function Expand-Release {
@@ -184,7 +184,7 @@ function Read-KeyOrTimeout ($prompt, $key) {
 }
 
 
-$repos = "aria2/aria2", "schollz/croc", "ImageOptim/gifski", "BtbN/FFmpeg-Builds", "kornelski/cavif-rs"
+$repos = "aria2/aria2", "schollz/croc", "ImageOptim/gifski", "BtbN/FFmpeg-Builds", "kornelski/cavif-rs", "master-of-zen/Av1an"
 $autoremove = Read-KeyOrTimeout "Do you want to automatically remove downloaded packages? [Y/n] (default=Y)" "Y"
 Write-Host ""
 
@@ -213,6 +213,9 @@ foreach ($repo in $repos) {
             Set-CustomTag "^v"
             Update-Release -arg "cavif --version" -tagtype $customtag `
                            -format "cavif-$customtag.zip" -filter "win\cavif.exe"
+        }
+        "av1an" {
+            Get-LatestRelease -format "av1an.exe"
         }
     }
 }
